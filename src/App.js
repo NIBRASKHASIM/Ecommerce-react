@@ -1,5 +1,7 @@
+import { Route, Routes } from "react-router-dom";
 import "./App.css";
 import Header from "./components/Header";
+import Home from "./components/Home";
 
 function App() {
   return (
@@ -7,17 +9,17 @@ function App() {
       <Header />
 
       <main>
-        {/* <Routes>
+        <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="/about" element={<About />} />
+          {/* <Route path="/aboudt" element={<About />} />
           <Route path="/product" element={<Product />} />
           <Route path="product/:id" element={<ProductDetails />} />
           <Route path="/:id" element={<ProductDetails />} />
           <Route path="/booking" element={<Booking />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/cart" element={<Cart />} />
-          <Route path="*" element={<Notfound />} />
-        </Routes> */}
+          <Route path="*" element={<Notfound />} /> */}
+        </Routes>
       </main>
 
       {/* <Footer /> */}

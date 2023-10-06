@@ -6,7 +6,7 @@ const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
   //   const { isOpen, setIsOpen } = useContext(false);
   return (
-    <div className="shadow-lg backdrop-blur-lg py-5 text-gray-900 bg-gray-50">
+    <div className="fixed top-0 left-0 right-0 z-50  shadow-lg backdrop-blur-lg py-5 text-gray-900 bg-gray-50">
       <nav className="flex items-center container mx-auto">
         <div>
           <Link to="/" className="text-gray-700 italic text-7xl">
@@ -38,36 +38,6 @@ const Header = () => {
         </ul>
       </nav>
     </div>
-    // <div className="shadow-lg backdrop-blur-lg py-5 text-gray-900 bg-gray-50">
-    //   <nav className="flex items-center container mx-auto">
-    //     <div>aslmcalk</div>
-    //     <ul className="list-none flex justify-center items-center ml-auto gap-5">
-    //       <li>
-    //         {/* <NavLink to="/">Home</NavLink> */}sdn sn
-    //       </li>
-    //       <li>
-    //         {/* <NavLink to="/about">About</NavLink> */}sdjlnsjkd
-    //       </li>
-    //       <li>
-    //         {/* <NavLink to="/product">Product</NavLink> */}sldj sjdn
-    //       </li>
-    //       <li>
-    //         {/* <NavLink to="/booking">Booking</NavLink> */}sdkm
-    //       </li>
-    //       <li>
-    //         {/* <NavLink to="/contact">Contact</NavLink> */}ascasd
-    //       </li>
-    //       <li>
-    //         {/* <NavLink to="/cart"> */}
-    //           <FaShoppingCart />
-    //         {/* </NavLink> */}
-    //       </li>
-    //     </ul>
-    //   </nav>
-    //   {/* <div className="container mx-auto">
-    //     <h1 className="text-white text-3xl font-semibold">My React App</h1>
-    //   </div> */}
-    // </div>
   );
 };
 

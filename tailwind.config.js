@@ -7,6 +7,9 @@ module.exports = {
         primary: "#3490dc",
         secondary: "#f6993f",
       },
+      backgroundImage: {
+        hero: "url('./img/bghero.jpg')",
+      },
     },
   },
   plugins: [],
