@@ -3,10 +3,13 @@ import "./App.css";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
 import Home from "./components/home/Home";
+import CartSideBar from "./components/cart/CartSideBar";
+import { useSelector } from "react-redux";
 
 function App() {
+  const showCart = useSelector((state) => state.cart.show);
   return (
-    <section className="">
+    <section className="overflow-hidden">
       <Header />
 
       <main>
@@ -22,7 +25,7 @@ function App() {
           <Route path="*" element={<Notfound />} /> */}
         </Routes>
       </main>
-
+      {showCart && <CartSideBar />}
       <Footer />
     </section>
   );
