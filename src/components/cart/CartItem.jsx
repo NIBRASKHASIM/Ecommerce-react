@@ -6,14 +6,13 @@ import { removeFromCart } from "../../redux/cartSlice";
 import { useDispatch } from "react-redux";
 
 const CartItem = ({ item }) => {
-  // destructure item
   const dispatch = useDispatch();
   console.log("item", item);
   const { id, title, image, price } = item;
 
   const [amount, setAmount] = useState(1);
 
-  const     increaseAmount = () => {
+  const increaseAmount = () => {
     setAmount(amount + 1);
   };
   const decreaseAmount = () => {
@@ -25,12 +24,10 @@ const CartItem = ({ item }) => {
   return (
     <div className="flex gap-x-4 py-2 lg:px-6 border-b border-gray-200 w-full font-light text-gray-500">
       <div className="w-full min-h-[150px] flex items-center gap-x-4">
-        {/* image */}
         <Link to={`/product/${id}`}>
           <img className="max-w-[80px]" src={image} alt="" />
         </Link>
         <div className="w-full flex flex-col">
-          {/* title and remove icon */}
           <div className="flex justify-between mb-2">
             <Link
               to={`/product/${id}`}
@@ -38,7 +35,6 @@ const CartItem = ({ item }) => {
             >
               {title}
             </Link>
-            {/* remove icon */}
             <div
               onClick={() => dispatch(removeFromCart(id))}
               className="text-xl cursor-pointer"
@@ -47,7 +43,6 @@ const CartItem = ({ item }) => {
             </div>
           </div>
           <div className="flex gap-x-2 h-[36px] text-sm">
-            {/* quantity */}
             <div className="flex flex-1 max-w-[100px] items-center h-full border text-primary font-medium">
               <div
                 onClick={() => decreaseAmount()}
@@ -65,11 +60,9 @@ const CartItem = ({ item }) => {
                 <IoMdAdd />
               </div>
             </div>
-            {/* item price */}
             <div className="flex flex-1 justify-around items-center">
               $ {price}
             </div>
-            {/* final price */}
             <div className="flex flex-1 justify-end items-center text-primary font-medium">{`$ ${parseFloat(
               price * amount
             ).toFixed(2)}`}</div>

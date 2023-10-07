@@ -14,7 +14,7 @@ function CartSideBar() {
       className={`right-0 w-full bg-white fixed top-0  shadow-2xl md:w-[35vw] lg:w-[40vw] xl:max-w-[30vw] transition-all duration-300 z-50 px-4 lg:px-[35px]"`}
     >
       <div className="flex items-center justify-between py-6 border-b">
-        <div className="uppercase text-sm font-semibold">Shopping Bag (9)</div>
+        <div className="uppercase text-sm font-semibold">Shopping Bag</div>
         <div
           onClick={() => dispatch(showCart())}
           className="cursor-poniter w-8 h-8 flex justify-center items-center"
@@ -34,7 +34,6 @@ function CartSideBar() {
             <span className="mr-2">Subtotal:</span> ${" "}
             {/* {parseFloat(total).toFixed(2)} */}
           </div>
-          {/* clear cart icon */}
         </div>
 
         <Link
