@@ -2,7 +2,7 @@ import { Link, NavLink } from "react-router-dom";
 import { BsBag } from "react-icons/bs";
 import { FaShoppingCart } from "react-icons/fa";
 import { useState } from "react";
-import CartSidebar from "./CartSideBar";
+import CartSidebar from "./home/CartSideBar";
 const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
   //   const { isOpen, setIsOpen } = useContext(false);

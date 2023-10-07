@@ -2,7 +2,8 @@ import React, { useEffect } from "react";
 import Slider from "./Slider";
 import { useQuery } from "react-query";
 import axios from "axios";
-import Product from "./Product";
+import Product from "../Product";
+import Whyme from "./WhyMe";
 function Home() {
   const { data, isLoading, isError } = useQuery("products", fetchProducts);
 
@@ -45,6 +46,7 @@ function Home() {
             })}
           </div>
         </div>
+        <Whyme />
       </section>
     </div>
   );
