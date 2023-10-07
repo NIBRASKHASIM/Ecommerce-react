@@ -5,13 +5,18 @@ import axios from "axios";
 import Product from "../Product";
 import Whyme from "./WhyMe";
 import Banners from "./Banners";
+import { useDispatch } from "react-redux";
+import { fullData } from "../../redux/cartSlice";
 function Home() {
   const { data, isLoading, isError } = useQuery("products", fetchProducts);
-
+  const dispatch = useDispatch();
   function fetchProducts() {
     return axios
       .get("https://fakestoreapi.com/products")
-      .then((response) => response.data)
+      .then((response) => {
+        dispatch(fullData(response.data));
+        return response.data;
+      })
       .catch((error) => {
         throw error;
       });

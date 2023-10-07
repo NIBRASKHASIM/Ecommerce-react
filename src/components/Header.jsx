@@ -7,7 +7,6 @@ import { useDispatch, useSelector } from "react-redux";
 import { showCart } from "../redux/cartSlice";
 const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
-  //   const { isOpen, setIsOpen } = useContext(false);
   const dispatch = useDispatch();
   const cart = useSelector((state) => state.cart.items);
   return (
@@ -27,7 +26,34 @@ const Header = () => {
               <NavLink to="/about">About</NavLink>
             </li>
             <li>
-              <NavLink to="/product">Product</NavLink>
+              <NavLink to="/product">Shop</NavLink>
+            </li>
+            <li className="relative">
+              <div className="flex items-center">
+                <input
+                  type="text"
+                  placeholder="Search"
+                  className="py-2 pl-4 pr-10 rounded-full focus:outline-none focus:border-blue-500 bg-gray-150"
+                />
+                <NavLink to="/search">
+                  <button className="rounded-full p-2 ml-2 bg-gray-00 text-white">
+                    <svg
+                      className="h-5 w-5 text-gray-500"
+                      fill="none"
+                      stroke="currentColor"
+                      viewBox="0 0 24 24"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth="2"
+                        d="M21 21l-5-5m-2-2a7 7 0 111-11 7 7 0 01-1 11zm-4-7a4 4 0 100-8 4 4 0 000 8z"
+                      ></path>
+                    </svg>
+                  </button>
+                </NavLink>
+              </div>
             </li>
 
             <li>

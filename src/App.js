@@ -5,6 +5,8 @@ import Footer from "./components/Footer";
 import Home from "./components/home/Home";
 import CartSideBar from "./components/cart/CartSideBar";
 import { useSelector } from "react-redux";
+import SearchPage from "./components/search/SearchPage";
+import ProductDetails from "./components/ProductDetail";
 
 function App() {
   const showCart = useSelector((state) => state.cart.show);
@@ -15,14 +17,8 @@ function App() {
       <main>
         <Routes>
           <Route path="/" element={<Home />} />
-          {/* <Route path="/aboudt" element={<About />} />
-          <Route path="/product" element={<Product />} />
-          <Route path="product/:id" element={<ProductDetails />} />
-          <Route path="/:id" element={<ProductDetails />} />
-          <Route path="/booking" element={<Booking />} />
-          <Route path="/contact" element={<Contact />} />
-          <Route path="/cart" element={<Cart />} />
-          <Route path="*" element={<Notfound />} /> */}
+          <Route path="/search" element={<SearchPage />} />
+          <Route path="/product/:id" element={<ProductDetails />} />
         </Routes>
       </main>
       {showCart && <CartSideBar />}
