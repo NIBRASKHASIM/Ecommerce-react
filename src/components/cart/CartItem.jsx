@@ -2,24 +2,17 @@ import React, { useContext, useState } from "react";
 import { Link } from "react-router-dom";
 
 import { IoMdAdd, IoMdClose, IoMdRemove } from "react-icons/io";
-import { removeFromCart } from "../../redux/cartSlice";
+import {
+  decreaseAmount,
+  increaseAmount,
+  removeFromCart,
+} from "../../redux/cartSlice";
 import { useDispatch } from "react-redux";
 
 const CartItem = ({ item }) => {
   const dispatch = useDispatch();
   console.log("item", item);
-  const { id, title, image, price } = item;
-
-  const [amount, setAmount] = useState(1);
-
-  const increaseAmount = () => {
-    setAmount(amount + 1);
-  };
-  const decreaseAmount = () => {
-    if (amount > 1) {
-      setAmount(amount - 1);
-    }
-  };
+  const { id, title, image, price, amount } = item;
 
   return (
     <div className="flex gap-x-4 py-2 lg:px-6 border-b border-gray-200 w-full font-light text-gray-500">
@@ -45,7 +38,7 @@ const CartItem = ({ item }) => {
           <div className="flex gap-x-2 h-[36px] text-sm">
             <div className="flex flex-1 max-w-[100px] items-center h-full border text-primary font-medium">
               <div
-                onClick={() => decreaseAmount()}
+                onClick={() => dispatch(decreaseAmount(id))}
                 className="h-full flex-1 flex justify-center items-center cursor-pointer"
               >
                 <IoMdRemove />
@@ -54,7 +47,7 @@ const CartItem = ({ item }) => {
                 {amount}
               </div>
               <div
-                onClick={() => increaseAmount()}
+                onClick={() => dispatch(increaseAmount(id))}
                 className="h-full flex flex-1 justify-center items-center cursor-pointer"
               >
                 <IoMdAdd />
